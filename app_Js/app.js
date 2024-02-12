@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
   console.log(req.url, req.method);
 
   res.setHeader("Content-type", "aplication/json");
-  // res.write('<h1>Hello World!</h1>')
+  res.write('<h1>Hello World!</h1>')
   const data = JSON.stringify([
     { name: "Tom", age: 30 },
     { name: "John", age: 28 },
