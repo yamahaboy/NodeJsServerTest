@@ -1,0 +1,30 @@
+[
+  {
+    "brand": "Bmw",
+    "model": "S1000",
+    "year": 2020,
+    "capacity": 998,
+    "id": 1707764831392
+  },
+  {
+    "brand": "Yamaha",
+    "model": "mt-07",
+    "year": 2020,
+    "capacity": 998,
+    "id": 1707764929790
+  },
+  {
+    "brand": "Kawasaki",
+    "model": "z800",
+    "year": 2020,
+    "capacity": 998,
+    "id": 1707764979506
+  },
+  {
+    "brand": "Ducati",
+    "model": "Monster",
+    "year": 2020,
+    "capacity": 998,
+    "id": 1707765203089
+  }
+]
