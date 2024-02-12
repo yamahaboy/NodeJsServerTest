@@ -1,7 +1,7 @@
 [
   {
     "brand": "Bmw",
-    "model": "S1000",
+    "model": "S1000RR",
     "year": 2020,
     "capacity": 998,
     "id": 1707764831392
@@ -26,5 +26,19 @@
     "year": 2020,
     "capacity": 998,
     "id": 1707765203089
+  },
+  {
+    "brand": "Yamaha",
+    "model": "Mt-09",
+    "year": 2020,
+    "capacity": 998,
+    "id": 1707767519863
+  },
+  {
+    "brand": "Yamaha",
+    "model": "Mt-10",
+    "year": 2020,
+    "capacity": 998,
+    "id": 1707767539194
   }
 ]
