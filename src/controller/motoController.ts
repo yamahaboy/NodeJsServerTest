@@ -7,6 +7,18 @@ export const getObjects = (req: Request, res: Response) => {
   res.status(200).send(objects);
 };
 
+export const getObjectsById = (req: Request, res: Response) => {
+  const objects = loadDataFromFile();
+  const id: number = parseInt(req.params.id, 10);
+  const object = objects.find(obj => obj.id === id);
+  if (object !== undefined) { 
+    res.status(200).send(object);
+  } else {
+    res.sendStatus(404);
+  }
+};
+
+
 export const createObject = (req: Request, res: Response) => {
   const objects = loadDataFromFile();
   const newObj: motoProps = req.body;

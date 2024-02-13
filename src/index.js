@@ -16,6 +16,7 @@ app.use(function (req, res, next) {
     next();
 });
 app.get('/objects', motoController_1.getObjects);
+app.get('/objects/:id', motoController_1.getObjectsById);
 app.post('/objects', motoController_1.createObject);
 app.put('/objects/:id', motoController_1.updateObject);
 app.delete('/objects/:id', motoController_1.deleteObject);

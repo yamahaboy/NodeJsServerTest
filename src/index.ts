@@ -1,6 +1,6 @@
 import express = require('express');
 import * as bodyParser from 'body-parser';
-import { createObject, deleteObject, getObjects, updateObject } from './controller/motoController';
+import { createObject, deleteObject, getObjects, getObjectsById, updateObject } from './controller/motoController';
 
 const app = express();
 const PORT = 3000;
@@ -18,6 +18,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/objects', getObjects);
+app.get('/objects/:id', getObjectsById);
 app.post('/objects', createObject);
 app.put('/objects/:id', updateObject);
 app.delete('/objects/:id', deleteObject);

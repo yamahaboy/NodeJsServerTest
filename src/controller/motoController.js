@@ -11,13 +11,27 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteObject = exports.updateObject = exports.createObject = exports.getObjects = void 0;
+exports.deleteObject = exports.updateObject = exports.createObject = exports.getObjectsById = exports.getObjects = void 0;
 var fileUtils_1 = require("../utils/fileUtils");
 var getObjects = function (req, res) {
     var objects = (0, fileUtils_1.loadDataFromFile)();
     res.status(200).send(objects);
 };
 exports.getObjects = getObjects;
+var getObjectsById = function (req, res) {
+    console.log("Запрошенный ID:", req.params.id);
+    var objects = (0, fileUtils_1.loadDataFromFile)();
+    console.log("Загруженные объекты:", objects);
+    var id = parseInt(req.params.id, 10);
+    var object = objects.find(function (obj) { return obj.id === id; });
+    if (object !== undefined) {
+        res.status(200).send(object);
+    }
+    else {
+        res.sendStatus(404);
+    }
+};
+exports.getObjectsById = getObjectsById;
 var createObject = function (req, res) {
     var objects = (0, fileUtils_1.loadDataFromFile)();
     var newObj = req.body;
@@ -46,6 +60,7 @@ var deleteObject = function (req, res) {
     var objects = (0, fileUtils_1.loadDataFromFile)();
     var id = parseInt(req.params.id, 10);
     objects = objects.filter(function (obj) { return obj.id !== id; });
+    console.log("Deletete obj", objects);
     (0, fileUtils_1.saveDataToFile)(objects);
     res.status(204).send();
 };
